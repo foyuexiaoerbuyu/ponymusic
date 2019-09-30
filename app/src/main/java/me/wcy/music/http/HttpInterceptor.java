@@ -4,6 +4,7 @@ import android.os.Build;
 
 import java.io.IOException;
 
+import me.wcy.music.utils.LogUtils;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -20,7 +21,9 @@ public class HttpInterceptor implements Interceptor {
                 .newBuilder()
                 .addHeader(UA, makeUA())
                 .build();
-        return chain.proceed(request);
+        Response response = chain.proceed(request);
+        LogUtils.e(response);
+        return response;
     }
 
     private String makeUA() {

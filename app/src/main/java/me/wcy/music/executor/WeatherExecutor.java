@@ -17,6 +17,7 @@ import java.util.Calendar;
 
 import me.wcy.music.R;
 import me.wcy.music.application.AppCache;
+import me.wcy.music.utils.LogUtils;
 import me.wcy.music.utils.binding.Bind;
 import me.wcy.music.utils.binding.ViewBinder;
 
@@ -101,7 +102,7 @@ public class WeatherExecutor implements IExecutor, AMapLocalWeatherListener {
             AppCache.get().setAMapLocalWeatherLive(aMapLocalWeatherLive);
             updateView(aMapLocalWeatherLive);
         } else {
-            Log.e(TAG, "获取天气预报失败");
+            LogUtils.e(TAG, "获取天气预报失败");
         }
 
         release();

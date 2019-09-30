@@ -15,5 +15,6 @@ public class MusicCursorLoader extends CursorLoader {
         this.setSortOrder("date_modified desc");
         this.setSelection("mime_type= ?");
         this.setSelectionArgs(new String[]{"audio/mpeg"});
+        this.setSortOrder(MediaStore.Audio.Media.DATE_ADDED);
     }
 }

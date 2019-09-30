@@ -9,6 +9,7 @@ import android.widget.AbsListView;
 import android.widget.ListView;
 
 import me.wcy.music.R;
+import me.wcy.music.utils.LogUtils;
 
 /**
  * 自动加载更多ListView
@@ -49,7 +50,7 @@ public class AutoLoadListView extends ListView implements AbsListView.OnScrollLi
     }
 
     public void onLoadComplete() {
-        Log.d(TAG, "onLoadComplete");
+        LogUtils.d(TAG, "onLoadComplete");
         mIsLoading = false;
         removeFooterView(vFooter);
     }
@@ -75,7 +76,7 @@ public class AutoLoadListView extends ListView implements AbsListView.OnScrollLi
     }
 
     private void onLoad() {
-        Log.d(TAG, "onLoad");
+        LogUtils.d(TAG, "onLoad");
         mIsLoading = true;
         addFooterView(vFooter, null, false);
         if (mListener != null) {

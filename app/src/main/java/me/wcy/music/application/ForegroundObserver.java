@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import me.wcy.music.utils.LogUtils;
+
 /**
  * Created by hzwangchenyan on 2017/9/20.
  */
@@ -90,7 +92,7 @@ public class ForegroundObserver implements Application.ActivityLifecycleCallback
         if (!isForeground && resumeActivityCount > 0) {
             isForeground = true;
             // 从后台进入前台
-            Log.i(TAG, "app in foreground");
+           LogUtils.i(TAG, "app in foreground");
             notify(activity, true);
         }
     }
@@ -104,7 +106,7 @@ public class ForegroundObserver implements Application.ActivityLifecycleCallback
                 if (isForeground && resumeActivityCount == 0) {
                     isForeground = false;
                     // 从前台进入后台
-                    Log.i(TAG, "app in background");
+                   LogUtils.i(TAG, "app in background");
                     ForegroundObserver.this.notify(activity, false);
                 }
             }

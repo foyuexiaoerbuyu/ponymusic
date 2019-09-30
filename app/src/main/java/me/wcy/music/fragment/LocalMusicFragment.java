@@ -93,6 +93,7 @@ public class LocalMusicFragment extends BaseFragment implements AdapterView.OnIt
     }
 
     private void initLoader() {
+        // FIXME: 2019/9/30 加载本地
         loader = getActivity().getLoaderManager().initLoader(0, null, new MusicLoaderCallback(getContext(), value -> {
             AppCache.get().getLocalMusicList().clear();
             AppCache.get().getLocalMusicList().addAll(value);

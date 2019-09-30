@@ -72,6 +72,7 @@ public class MusicLoaderCallback implements LoaderManager.LoaderCallbacks {
             long albumId = data.getLong(data.getColumnIndex(MediaStore.Audio.AudioColumns.ALBUM_ID));
             String path = data.getString(data.getColumnIndex(MediaStore.Audio.AudioColumns.DATA));
             String fileName = data.getString(data.getColumnIndex(MediaStore.Audio.AudioColumns.DISPLAY_NAME));
+//            String fileName = data.getString(data.getColumnIndex(MediaStore.Audio.AudioColumns.DISPLAY_NAME));
 
             Music music = new Music();
             music.setSongId(id);

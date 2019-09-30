@@ -10,6 +10,7 @@ import android.util.Log;
 
 import me.wcy.music.application.Notifier;
 import me.wcy.music.constants.Actions;
+import me.wcy.music.utils.LogUtils;
 
 /**
  * 音乐播放后台服务
@@ -27,7 +28,7 @@ public class PlayService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.i(TAG, "onCreate: " + getClass().getSimpleName());
+       LogUtils.i(TAG, "onCreate: " + getClass().getSimpleName());
         AudioPlayer.get().init(this);
         MediaSessionManager.get().init(this);
         Notifier.get().init(this);

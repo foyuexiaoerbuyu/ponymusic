@@ -17,6 +17,7 @@ import me.wcy.music.model.Music;
 import me.wcy.music.model.SheetInfo;
 import me.wcy.music.utils.CoverLoader;
 import me.wcy.music.storage.preference.Preferences;
+import me.wcy.music.utils.LogUtils;
 import me.wcy.music.utils.ScreenUtils;
 import me.wcy.music.utils.ToastUtils;
 
@@ -92,7 +93,7 @@ public class AppCache {
 
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-            Log.i(TAG, "onCreate: " + activity.getClass().getSimpleName());
+           LogUtils.i(TAG, "onCreate: " + activity.getClass().getSimpleName());
             mActivityStack.add(activity);
         }
 
@@ -118,7 +119,7 @@ public class AppCache {
 
         @Override
         public void onActivityDestroyed(Activity activity) {
-            Log.i(TAG, "onDestroy: " + activity.getClass().getSimpleName());
+           LogUtils.i(TAG, "onDestroy: " + activity.getClass().getSimpleName());
             mActivityStack.remove(activity);
         }
     }

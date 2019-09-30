@@ -9,6 +9,8 @@ import org.blinkenlights.jid3.v2.ID3V2_3_0Tag;
 
 import java.io.File;
 
+import me.wcy.music.utils.LogUtils;
+
 /**
  * ID3 Tag 工具类<br>
  * 基于<a href="https://blinkenlights.org/jid3/">JID3</a>编写<br>
@@ -22,12 +24,12 @@ public class ID3TagUtils {
      */
     public static boolean setID3Tags(File sourceFile, ID3Tags id3Tags, boolean clearOriginal) {
         if (sourceFile == null || !sourceFile.exists()) {
-            Log.e(TAG, "source file is illegal");
+            LogUtils.e(TAG, "source file is illegal");
             return false;
         }
 
         if (id3Tags == null) {
-            Log.e(TAG, "id3 tags is illegal");
+            LogUtils.e(TAG, "id3 tags is illegal");
             return false;
         }
 
