@@ -78,6 +78,9 @@ class LocalMusicLoader {
 
                 val path = cursor.getString(dataColumn)
                 val fileName = cursor.getString(displayNameColumn)
+                if (path.contains("Recordings")) {
+                    continue
+                }
 
                 val entity = SongEntity(
                     type = SongEntity.LOCAL,
