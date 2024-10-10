@@ -1,4 +1,4 @@
-# 波尼音乐
+# 波尼音乐  jdk17
 ![](https://raw.githubusercontent.com/wangchenyan/ponymusic/master/app/src/main/res/drawable-xxhdpi/ic_launcher.webp)
 
 ## 系列文章
